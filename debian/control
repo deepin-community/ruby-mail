@@ -1,0 +1,39 @@
+Source: ruby-mail
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Carl Worth <cworth@debian.org>,
+           Caitlin Matos <caitlin.matos@zoho.com>
+Build-Depends: debhelper (>= 11~),
+               gem2deb,
+               rake,
+               ruby-mini-mime,
+               ruby-rspec
+Standards-Version: 4.3.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-mail.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-mail
+Homepage: https://github.com/mikel/mail
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-mail
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-mini-mime,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Ruby library to handle email generation, parsing and sending
+ The purpose of this library is to provide a single point of access to
+ handle all email functions, including sending and receiving
+ emails. All network type actions are done through proxy methods to
+ Net::SMTP, Net::POP3 etc.
+ .
+ Built from experience with TMail, it is designed to be a pure ruby
+ implementation that makes generating, sending and parsing emails a no
+ brainer.
+ .
+ Finally, Mail has been designed with a very simple object oriented
+ system that really opens up the email messages you are parsing, if
+ you know what you are doing, you can fiddle with every last bit of
+ your email directly.
